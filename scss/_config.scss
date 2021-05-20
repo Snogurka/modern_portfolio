@@ -29,8 +29,16 @@ $background-opacity: 0.8;
   }
 }
 
-//media query mixins
+//set text color
+@function set-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
 
+//media query mixins
 @mixin  mediaSm {
   @media screen and (max-width: 500px) {
     // placing @content here means that anything that we put in this mixin in another file will get placed here 
